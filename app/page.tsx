@@ -41,9 +41,20 @@ export default function Home() {
 
           <article id="projects" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
             <h3 className="mb-3 text-lg font-semibold text-white">Projects</h3>
-            <p className="text-slate-300">
-              Start with one project card and add a new project each time you improve. Keep entries short and focused on what you built.
-            </p>
+            <div className="space-y-4">
+              <div className="border-b border-slate-700 pb-4">
+                <h4 className="text-cyan-400 font-medium">Portfolio Website</h4>
+                <p className="text-slate-300 text-sm mt-1">A clean, minimal portfolio built with Next.js and Tailwind CSS. Features responsive design and smooth transitions.</p>
+                <div className="flex space-x-2 mt-2">
+                  <span className="text-xs bg-slate-800 px-2 py-1 rounded">Next.js</span>
+                  <span className="text-xs bg-slate-800 px-2 py-1 rounded">React</span>
+                  <span className="text-xs bg-slate-800 px-2 py-1 rounded">Tailwind CSS</span>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm">
+                Add more projects as you build them. Keep descriptions concise and highlight the technologies used.
+              </p>
+            </div>
           </article>
         </section>
 
