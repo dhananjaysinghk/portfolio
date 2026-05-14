@@ -1,6 +1,6 @@
 # Dhananjay Portfolio
 
-A modern, responsive personal portfolio website built with Next.js 14, React 18, TypeScript, and Tailwind CSS. Features a clean, minimal design focused on performance and user experience.
+A modern, responsive personal portfolio website built with Next.js 16, React 19, TypeScript, and Tailwind CSS. Features a clean, minimal design focused on performance and user experience.
 
 ## 🚀 Features
 
@@ -102,9 +102,6 @@ Update the Projects section in `app/page.tsx` with your actual projects:
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
@@ -116,9 +113,6 @@ Dhananjay Singh
 ---
 
 Built with ❤️ using Next.js and Tailwind CSS
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
 
 ## License
 

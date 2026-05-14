@@ -22,7 +22,7 @@ export default function Home() {
       <header className="border-b border-slate-800 px-6 py-4 sm:px-10">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-6">
           <h1 className="text-xl font-semibold text-cyan-400">Dhananjay Singh</h1>
-          <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+          <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
             <a href="#about" className="transition-colors hover:text-cyan-400">About</a>
             <a href="#projects" className="transition-colors hover:text-cyan-400">Projects</a>
             <a href="#contact" className="transition-colors hover:text-cyan-400">Contact</a>
@@ -119,6 +119,17 @@ export default function Home() {
           </section>
         </div>
       </div>
+
+      <footer className="border-t border-slate-800 px-6 py-6 sm:px-10">
+        <div className="mx-auto flex max-w-5xl flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Dhananjay Singh. Built with Next.js and Tailwind CSS.</p>
+          <div className="flex flex-wrap gap-4">
+            <a href="#projects" className="transition hover:text-cyan-400">Projects</a>
+            <a href="#about" className="transition hover:text-cyan-400">About</a>
+            <a href="mailto:hello@dhananjaysingh.dev" className="transition hover:text-cyan-400">Email</a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
