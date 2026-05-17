@@ -1,3 +1,18 @@
+const services = [
+  {
+    title: "Product UI",
+    description: "Designing polished interfaces that feel intuitive on desktop and mobile.",
+  },
+  {
+    title: "Performance",
+    description: "Improving load times, accessibility, and Core Web Vitals for modern sites.",
+  },
+  {
+    title: "Landing Pages",
+    description: "Building conversion-focused landing pages with strong visual hierarchy.",
+  },
+];
+
 const projects = [
   {
     title: "Portfolio Website",
@@ -14,6 +29,37 @@ const projects = [
     description: "Optimized a web app for faster load times, better Lighthouse scores, and smoother interactions.",
     tech: ["Web Vitals", "Next.js", "CSS"],
   },
+  {
+    title: "Component Library",
+    description: "Created reusable UI components for consistent, maintainable design systems.",
+    tech: ["React", "Storybook", "Tailwind CSS"],
+  },
+];
+
+const experience = [
+  {
+    role: "Frontend Developer",
+    company: "Acme Studios",
+    period: "2024 – Present",
+    detail: "Delivered accessible web experiences and modernized a suite of client-facing applications.",
+  },
+  {
+    role: "UI Developer",
+    company: "Bright Labs",
+    period: "2022 – 2024",
+    detail: "Built responsive landing pages and design systems for early-stage SaaS brands.",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Dhananjay delivered a fast, polished experience and made the whole process effortless.",
+    author: "Anjali Patel, Product Lead",
+  },
+  {
+    quote: "The site looks great on every device, and performance improved dramatically.",
+    author: "Rohan Verma, Growth Manager",
+  },
 ];
 
 export default function Home() {
@@ -25,6 +71,7 @@ export default function Home() {
           <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
             <a href="#about" className="transition-colors hover:text-cyan-400">About</a>
             <a href="#projects" className="transition-colors hover:text-cyan-400">Projects</a>
+            <a href="#experience" className="transition-colors hover:text-cyan-400">Experience</a>
             <a href="#contact" className="transition-colors hover:text-cyan-400">Contact</a>
           </nav>
         </div>
@@ -56,6 +103,15 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="grid gap-4 sm:grid-cols-3">
+            {services.map((service) => (
+              <article key={service.title} className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-slate-300 shadow-lg shadow-slate-950/20">
+                <h2 className="mb-3 text-lg font-semibold text-white">{service.title}</h2>
+                <p className="text-sm leading-6">{service.description}</p>
+              </article>
+            ))}
+          </section>
+
           <section id="about" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-lg shadow-slate-900/20">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -68,25 +124,41 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <article className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
-              <h3 className="mb-4 text-lg font-semibold text-white">Skills</h3>
-              <ul className="grid gap-2 text-slate-300 sm:grid-cols-2">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Tailwind CSS</li>
-                <li>TypeScript</li>
-                <li>Responsive design</li>
-                <li>Performance optimization</li>
-              </ul>
-            </article>
+          <section id="experience" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-semibold text-white">Experience</h2>
+                <p className="mt-3 max-w-2xl text-slate-300">
+                  Proven experience delivering production-ready interfaces, performance improvements, and accessible design systems.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {experience.map((item) => (
+                  <article key={item.role} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-6">
+                    <div className="flex items-center justify-between gap-4 text-slate-300">
+                      <div>
+                        <p className="text-sm uppercase tracking-[0.24em] text-cyan-400">{item.company}</p>
+                        <h3 className="mt-2 text-lg font-semibold text-white">{item.role}</h3>
+                      </div>
+                      <p className="text-sm text-slate-500">{item.period}</p>
+                    </div>
+                    <p className="mt-4 text-slate-300">{item.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
+          <section className="grid gap-6 xl:grid-cols-[1.4fr_0.6fr]">
             <article id="projects" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
               <h3 className="mb-4 text-lg font-semibold text-white">Projects</h3>
               <div className="space-y-4">
                 {projects.map((project) => (
                   <div key={project.title} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-5">
-                    <h4 className="text-cyan-400 font-medium">{project.title}</h4>
+                    <div className="flex items-center justify-between gap-4">
+                      <h4 className="text-cyan-400 font-medium">{project.title}</h4>
+                      <span className="rounded-full bg-slate-800 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-400">Featured</span>
+                    </div>
                     <p className="mt-2 text-slate-300 text-sm">{project.description}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {project.tech.map((item) => (
@@ -99,22 +171,62 @@ export default function Home() {
                 ))}
               </div>
             </article>
+
+            <article className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
+              <h3 className="mb-4 text-lg font-semibold text-white">Testimonials</h3>
+              <div className="space-y-4">
+                {testimonials.map((item, index) => (
+                  <div key={index} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-5 text-slate-300">
+                    <p className="text-sm italic">“{item.quote}”</p>
+                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-cyan-400">{item.author}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
           </section>
 
           <section id="contact" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="text-2xl font-semibold text-white">Contact</h2>
-                <p className="mt-3 max-w-2xl text-slate-300">
-                  Interested in working together? Send a message to discuss ideas, projects, or freelance opportunities.
-                </p>
+            <div className="space-y-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h2 className="text-2xl font-semibold text-white">Contact</h2>
+                  <p className="mt-3 max-w-2xl text-slate-300">
+                    Interested in working together? Send a message to discuss ideas, projects, or freelance opportunities.
+                  </p>
+                </div>
+                <a
+                  href="mailto:hello@dhananjaysingh.dev"
+                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Email me
+                </a>
               </div>
-              <a
-                href="mailto:hello@dhananjaysingh.dev"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-              >
-                Email me
-              </a>
+              <form className="grid gap-4 sm:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  aria-label="Name"
+                  className="rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  aria-label="Email"
+                  className="rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+                />
+                <textarea
+                  rows={4}
+                  placeholder="Message"
+                  aria-label="Message"
+                  className="sm:col-span-2 rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+                />
+                <button
+                  type="submit"
+                  className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Send message
+                </button>
+              </form>
             </div>
           </section>
         </div>
@@ -125,6 +237,7 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Dhananjay Singh. Built with Next.js and Tailwind CSS.</p>
           <div className="flex flex-wrap gap-4">
             <a href="#projects" className="transition hover:text-cyan-400">Projects</a>
+            <a href="#experience" className="transition hover:text-cyan-400">Experience</a>
             <a href="#about" className="transition hover:text-cyan-400">About</a>
             <a href="mailto:hello@dhananjaysingh.dev" className="transition hover:text-cyan-400">Email</a>
           </div>
