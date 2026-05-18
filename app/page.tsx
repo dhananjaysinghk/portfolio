@@ -13,6 +13,36 @@ const services = [
   },
 ];
 
+const skills = [
+  {
+    category: "Front-end",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML", "CSS"],
+  },
+  {
+    category: "Design",
+    items: ["Responsive layouts", "Accessibility", "UI systems", "Motion", "Typography"],
+  },
+  {
+    category: "Performance",
+    items: ["Lighthouse optimization", "Web Vitals", "SSR/SSG", "Caching", "Progressive enhancement"],
+  },
+];
+
+const highlights = [
+  {
+    title: "Fast-loading builds",
+    description: "Optimized for real users with performance-first architecture and lightweight interactions.",
+  },
+  {
+    title: "Accessible interfaces",
+    description: "Semantic markup, keyboard support, and contrast-aware design for everyone.",
+  },
+  {
+    title: "Design-driven code",
+    description: "Reusable components and consistent patterns that scale well over time.",
+  },
+];
+
 const projects = [
   {
     title: "Portfolio Website",
@@ -33,6 +63,24 @@ const projects = [
     title: "Component Library",
     description: "Created reusable UI components for consistent, maintainable design systems.",
     tech: ["React", "Storybook", "Tailwind CSS"],
+  },
+];
+
+const caseStudies = [
+  {
+    title: "Subscription Platform",
+    description: "Revamped onboarding flows, improved conversion clarity, and reduced drop-off in trial signup.",
+    outcome: "+28% conversions",
+  },
+  {
+    title: "E-commerce Relaunch",
+    description: "Delivered a faster storefront experience with improved product filtering and checkout accessibility.",
+    outcome: "+18% engagement",
+  },
+  {
+    title: "Brand Refresh",
+    description: "Built a cohesive digital identity with reusable UI patterns and refreshed visual language.",
+    outcome: "Stronger brand consistency",
   },
 ];
 
@@ -70,6 +118,7 @@ export default function Home() {
           <h1 className="text-xl font-semibold text-cyan-400">Dhananjay Singh</h1>
           <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
             <a href="#about" className="transition-colors hover:text-cyan-400">About</a>
+            <a href="#skills" className="transition-colors hover:text-cyan-400">Skills</a>
             <a href="#projects" className="transition-colors hover:text-cyan-400">Projects</a>
             <a href="#experience" className="transition-colors hover:text-cyan-400">Experience</a>
             <a href="#contact" className="transition-colors hover:text-cyan-400">Contact</a>
@@ -119,8 +168,48 @@ export default function Home() {
                 <p className="mt-3 max-w-2xl text-slate-300">
                   I’m a web developer who values thoughtful interaction, polished UI, and strong performance. I enjoy turning concepts into responsive interfaces that feel effortless on every device.
                 </p>
+                <ul className="mt-6 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+                  <li>Accessible, inclusive experiences</li>
+                  <li>Performance-first front-end architecture</li>
+                  <li>Modular design systems and components</li>
+                  <li>Rapid prototyping with clean code</li>
+                </ul>
               </div>
               <span className="rounded-full border border-cyan-400 px-4 py-2 text-sm text-cyan-300">Available for collaboration</span>
+            </div>
+          </section>
+
+          <section className="grid gap-4 sm:grid-cols-3">
+            {highlights.map((item) => (
+              <article key={item.title} className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-slate-300 shadow-lg shadow-slate-950/20">
+                <h3 className="mb-3 text-lg font-semibold text-white">{item.title}</h3>
+                <p className="text-sm leading-6">{item.description}</p>
+              </article>
+            ))}
+          </section>
+
+          <section id="skills" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-semibold text-white">Skills</h2>
+                <p className="mt-3 max-w-2xl text-slate-300">
+                  I blend fast front-end development with a polished design approach, delivering solutions that work beautifully and load quickly.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {skills.map((skill) => (
+                  <div key={skill.category} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-6">
+                    <h3 className="text-lg font-semibold text-white">{skill.category}</h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {skill.items.map((item) => (
+                        <span key={item} className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -173,12 +262,17 @@ export default function Home() {
             </article>
 
             <article className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
-              <h3 className="mb-4 text-lg font-semibold text-white">Testimonials</h3>
+              <h3 className="mb-4 text-lg font-semibold text-white">Case Studies</h3>
               <div className="space-y-4">
-                {testimonials.map((item, index) => (
-                  <div key={index} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-5 text-slate-300">
-                    <p className="text-sm italic">“{item.quote}”</p>
-                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-cyan-400">{item.author}</p>
+                {caseStudies.map((item) => (
+                  <div key={item.title} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-5 text-slate-300">
+                    <div className="flex items-center justify-between gap-4">
+                      <h4 className="text-cyan-400 font-medium">{item.title}</h4>
+                      <span className="rounded-full bg-slate-800 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-400">
+                        {item.outcome}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-slate-300 text-sm">{item.description}</p>
                   </div>
                 ))}
               </div>
