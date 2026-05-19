@@ -121,6 +121,7 @@ export default function Home() {
             <a href="#skills" className="transition-colors hover:text-cyan-400">Skills</a>
             <a href="#projects" className="transition-colors hover:text-cyan-400">Projects</a>
             <a href="#experience" className="transition-colors hover:text-cyan-400">Experience</a>
+            <a href="#testimonials" className="transition-colors hover:text-cyan-400">Testimonials</a>
             <a href="#contact" className="transition-colors hover:text-cyan-400">Contact</a>
           </nav>
         </div>
@@ -279,6 +280,25 @@ export default function Home() {
             </article>
           </section>
 
+          <section id="testimonials" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-semibold text-white">Testimonials</h2>
+                <p className="mt-3 max-w-2xl text-slate-300">
+                  What clients say about working together and the results delivered.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {testimonials.map((item) => (
+                  <article key={item.author} className="rounded-3xl border border-slate-700 bg-slate-950/50 p-6 text-slate-300">
+                    <p className="text-slate-100 text-sm leading-7">“{item.quote}”</p>
+                    <p className="mt-4 text-sm font-semibold text-cyan-300">{item.author}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section id="contact" className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8">
             <div className="space-y-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -332,6 +352,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <a href="#projects" className="transition hover:text-cyan-400">Projects</a>
             <a href="#experience" className="transition hover:text-cyan-400">Experience</a>
+            <a href="#testimonials" className="transition hover:text-cyan-400">Testimonials</a>
             <a href="#about" className="transition hover:text-cyan-400">About</a>
             <a href="mailto:hello@dhananjaysingh.dev" className="transition hover:text-cyan-400">Email</a>
           </div>
