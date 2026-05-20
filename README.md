@@ -63,6 +63,7 @@ portfolio/
 
 ### Edit content
 - Update `app/page.tsx` to change the hero, About, Services, Experience, Projects, Testimonials, and Contact sections.
+- The contact section now uses `app/components/ContactForm.tsx` for client-side form validation and user feedback.
 - Adjust the `services`, `experience`, `projects`, and `testimonials` arrays in `app/page.tsx` to add your own case studies.
 
 ### Edit styling

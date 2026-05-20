@@ -1,3 +1,5 @@
+import ContactForm from "./components/ContactForm";
+
 const services = [
   {
     title: "Product UI",
@@ -315,32 +317,7 @@ export default function Home() {
                   Email me
                 </a>
               </div>
-              <form className="grid gap-4 sm:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  aria-label="Name"
-                  className="rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  aria-label="Email"
-                  className="rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
-                />
-                <textarea
-                  rows={4}
-                  placeholder="Message"
-                  aria-label="Message"
-                  className="sm:col-span-2 rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
-                />
-                <button
-                  type="submit"
-                  className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-                >
-                  Send message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </section>
         </div>
